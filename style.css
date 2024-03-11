@@ -254,13 +254,18 @@ footer .text p {
   animation: scale-in-tr 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
+.scale-out-tr {
+  -webkit-animation: scale-out-tr 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scale-out-tr 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
 @keyframes scale-in-tr {
   0% {
     -webkit-transform: scale(0);
     transform: scale(0);
     -webkit-transform-origin: 100% 0%;
     transform-origin: 100% 0%;
-    opacity: 1;
+    opacity: 0.5;
   }
   100% {
     -webkit-transform: scale(1);
@@ -268,6 +273,24 @@ footer .text p {
     -webkit-transform-origin: 100% 0%;
     transform-origin: 100% 0%;
     opacity: 1;
+  }
+}
+
+@keyframes scale-out-tr {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 0;
   }
 }
 
