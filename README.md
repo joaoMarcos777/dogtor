@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/./pets.svg" width="140px" />
+  <img src="./frontend/assets/pets.svg" width="140px" />
 </p>
 
 <h1 align="center">Dogtor</h1>
