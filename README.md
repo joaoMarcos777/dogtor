@@ -4,7 +4,7 @@
 
 <h1 align="center">Dogtor</h1>
 
-> An applicattion that searches for a veterinarian closest to you.\n
+> An applicattion that searches for a veterinarian closest to you.
 > College project.
 
 ## Technologies
