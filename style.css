@@ -54,13 +54,23 @@ body * {
 }
 
 nav {
+  position: fixed;
+  width: 100%;
+  background-color: var(--base-white);
   padding: 1.6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2.6rem;
   border: 1px solid #e3e0e0;
   box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.25);
+}
+
+nav .links {
+  display: none;
+}
+
+nav .buttons {
+  display: none;
 }
 
 nav h1 {
@@ -81,6 +91,7 @@ nav i {
   place-items: center;
   gap: 2rem;
   padding: 2rem;
+  margin-top: 6.4rem;
 }
 
 .intro img {
@@ -197,6 +208,69 @@ footer .text p {
   line-height: 2.4rem;
 }
 
+#actions {
+  position: fixed;
+  top: 5.6rem;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.97);
+  width: 100%;
+  height: 50%;
+
+  display: grid;
+  place-items: center;
+  place-content: center;
+  gap: 3.2rem;
+}
+
+#actions a {
+  color: var(--base-black);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#actions a:nth-child(3) {
+  margin-bottom: 3.2rem;
+}
+
+#actions button {
+  background: transparent;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#actions button:last-child {
+  background: var(--base-orange-600);
+  color: var(--base-white);
+  padding: 1rem 3.6rem;
+  border-radius: 6rem;
+}
+
+/* ANIMATIONS */
+
+.scale-in-tr {
+  -webkit-animation: scale-in-tr 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scale-in-tr 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes scale-in-tr {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+    opacity: 1;
+  }
+}
+
 /* RESPONSIVENESS */
 
 @media (min-width: 800px) {
@@ -206,6 +280,10 @@ footer .text p {
 
   nav {
     padding: 3.2rem 6.4rem;
+  }
+
+  nav .ph-list {
+    display: none;
   }
 
   nav .links {
@@ -270,7 +348,9 @@ footer .text p {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 0 6.4rem;
+    margin-top: 14rem;
   }
+
   .intro img {
     width: 100%;
     order: 2;
@@ -335,4 +415,8 @@ footer .text p {
     width: 20rem;
     height: 20rem;
   }
+}
+
+.hidden {
+  display: none !important;
 }
