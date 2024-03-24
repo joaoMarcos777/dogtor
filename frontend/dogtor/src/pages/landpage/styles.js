@@ -19,6 +19,56 @@ export const Container = styled.div`
     text-align: justify;
   }
 
+  .hidden {
+    display: none;
+  }
+
+  .scale-in-tr {
+    -webkit-animation: scale-in-tr 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: scale-in-tr 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  .scale-out-tr {
+    -webkit-animation: scale-out-tr 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: scale-out-tr 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  @keyframes scale-in-tr {
+    0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+      opacity: 0.95;
+    }
+  }
+
+  @keyframes scale-out-tr {
+    0% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+      opacity: 0.95;
+    }
+    100% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+      opacity: 1;
+    }
+  }
+
   @media (min-width: 800px) {
     p {
       font-size: 1.6rem;
@@ -45,8 +95,25 @@ export const Navbar = styled.nav`
     line-height: 2.4rem;
   }
 
+  > ul {
+    display: none;
+  }
+
+  > .buttons {
+    display: none;
+  }
+
+  > button {
+    background: transparent;
+    height: 2.4rem;
+  }
+
   @media (min-width: 800px) {
     padding: 3.2rem 6.4rem;
+
+    #openMenuButton {
+      display: none;
+    }
 
     > ul {
       display: flex;
@@ -54,7 +121,7 @@ export const Navbar = styled.nav`
       list-style: none;
 
       a {
-        color: var(--base-black);
+        color: ${({ theme }) => theme.COLORS.BLACK};
         text-decoration: none;
         position: relative;
       }
@@ -104,6 +171,49 @@ export const Navbar = styled.nav`
         background: ${({ theme }) => theme.COLORS.ORANGE_HOVER};
       }
     }
+
+    > svg {
+      display: none;
+    }
+  }
+`;
+
+export const NavbarMenu = styled.div`
+  position: fixed;
+  top: 5.6rem;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 1);
+  width: 100%;
+  height: 50%;
+
+  display: grid;
+  place-items: center;
+  place-content: center;
+  gap: 3.2rem;
+
+  > a {
+    color: ${({ theme }) => theme.COLORS.BLACK};
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  > a:nth-child(3) {
+    margin-bottom: 3.2rem;
+  }
+
+  > button {
+    background: transparent;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  > button:last-child {
+    background: ${({ theme }) => theme.COLORS.ORANGE_600};
+    color: ${({ theme }) => theme.COLORS.WHITE};
+    padding: 1rem 3.6rem;
+    border-radius: 6rem;
   }
 `;
 
