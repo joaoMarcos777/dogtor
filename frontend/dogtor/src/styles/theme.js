@@ -4,6 +4,7 @@ export default {
     ORANGE_HOVER: "#a24e21",
 
     BROWN_700: "#423434",
+    BROWN_500: "#5F5454",
     BROWN_300: "#907e7e",
 
     BLUE_600: "#2689b2",

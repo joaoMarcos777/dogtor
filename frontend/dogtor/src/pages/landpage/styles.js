@@ -77,7 +77,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Navbar = styled.nav`
+export const Header = styled.nav`
   grid-area: header;
 
   width: 100%;
@@ -178,7 +178,7 @@ export const Navbar = styled.nav`
   }
 `;
 
-export const NavbarMenu = styled.div`
+export const HeaderMenu = styled.div`
   position: fixed;
   top: 5.6rem;
   left: 0;

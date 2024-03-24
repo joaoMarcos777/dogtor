@@ -2,11 +2,11 @@ import petsImage from "../../assets/pets.svg";
 import womanImage from "../../assets/woman-with-dog.jpg";
 import pinto from "../../assets/pinto.png";
 import { PiList, PiX } from "react-icons/pi";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import {
   Container,
-  Navbar,
-  NavbarMenu,
+  Header,
+  HeaderMenu,
   Content,
   IntroSection,
   CareULoveSection,
@@ -61,7 +61,7 @@ export function Landpage() {
 
   return (
     <Container>
-      <Navbar>
+      <Header>
         <h1>Dogtor</h1>
 
         <ul>
@@ -94,14 +94,14 @@ export function Landpage() {
         >
           <PiX size={24} />
         </button>
-      </Navbar>
-      <NavbarMenu ref={menu} className="hidden">
+      </Header>
+      <HeaderMenu ref={menu} className="hidden">
         <a href="#">Home</a>
         <a href="#">Serviços</a>
         <a href="#">Sobre nós</a>
         <button>Login</button>
         <button>Cadastre-se</button>
-      </NavbarMenu>
+      </HeaderMenu>
 
       <Content>
         <IntroSection>
