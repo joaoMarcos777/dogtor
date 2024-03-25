@@ -40,9 +40,5 @@ export const Container = styled.div`
       -webkit-appearance: none;
       margin: 0;
     }
-
-    &[type="number"] {
-      -moz-appearance: textfield;
-    }
   }
 `;
