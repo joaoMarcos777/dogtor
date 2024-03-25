@@ -1,21 +1,24 @@
 import { useEffect, useState } from "react";
 import orangeCat from "../../assets/orange-cat.png";
 import pets from "../../assets/pets.svg";
+import { Container, Image } from "./styles";
 import { Button } from "../../components/button";
-import { ButtonText } from "../../components/button-text";
 import { Header } from "../../components/header";
-import { Input } from "../../components/input";
-import { Container, Image, Form } from "./styles";
+import { Form } from "../../components/form";
+import { ContentWrapper } from "../../components/content-wrapper";
+import { Link } from "react-router-dom";
 
 export function WhoAreYou() {
   const [image, setImage] = useState({});
 
+  const handleResize = () => {
+    if (window.innerWidth > 1100) {
+      setImage(pets);
+    } else setImage(orangeCat);
+  };
+
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 1100) {
-        setImage(pets);
-      } else setImage(orangeCat);
-    };
+    handleResize();
 
     window.addEventListener("load", handleResize);
     window.addEventListener("resize", handleResize);
@@ -27,13 +30,19 @@ export function WhoAreYou() {
     <Container>
       <Header />
 
-      <Image src={image} alt="" />
-
-      <Form>
-        <h1>Você é?</h1>
-        <Button title="Usuário" primary />
-        <Button title="Veterinário" secondary={true} />
-      </Form>
+      <ContentWrapper>
+        <Image src={image} alt="" />
+        <div>
+          <Form title="Você é?">
+            <Link to="/sign-in">
+              <Button title="Usuário" primary />
+            </Link>
+            <Link to="/sign-in">
+              <Button title="Veterinário" secondary={true} />
+            </Link>
+          </Form>
+        </div>
+      </ContentWrapper>
     </Container>
   );
 }

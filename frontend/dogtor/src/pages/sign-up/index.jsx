@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import pets from "../../assets/pets.svg";
+
 import { Container, Wrapper } from "./styles";
 
 import { Header } from "../../components/header";
+import { ContentWrapper } from "../../components/content-wrapper";
 
 export function SignUp() {
   const [image, setImage] = useState({});
@@ -40,7 +42,7 @@ export function SignUp() {
     <Container>
       <Header />
 
-      <div>
+      <ContentWrapper>
         <img src={image} alt="" />
         <Wrapper>
           <Outlet
@@ -49,7 +51,7 @@ export function SignUp() {
             onPrevious={handlePrevious}
           />
         </Wrapper>
-      </div>
+      </ContentWrapper>
     </Container>
   );
 }

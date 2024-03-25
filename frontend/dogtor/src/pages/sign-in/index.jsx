@@ -10,6 +10,7 @@ import { ButtonText } from "../../components/button-text";
 import { Header } from "../../components/header";
 import { Input } from "../../components/input";
 import { Link } from "react-router-dom";
+import { ContentWrapper } from "../../components/content-wrapper";
 
 export function SignIn() {
   const [image, setImage] = useState({});
@@ -37,7 +38,7 @@ export function SignIn() {
     <Container>
       <Header />
 
-      <div>
+      <ContentWrapper>
         <img src={image} alt="" />
         <div>
           <Form title="Login" onSubmit={handleSubmit}>
@@ -60,7 +61,7 @@ export function SignIn() {
             </Link>
           </Form>
         </div>
-      </div>
+      </ContentWrapper>
     </Container>
   );
 }
