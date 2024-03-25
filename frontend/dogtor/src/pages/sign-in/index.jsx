@@ -38,7 +38,7 @@ export function SignIn() {
           labelFor="emailField"
         />
         <Input
-          title="Password"
+          title="Senha"
           placeholder="*******"
           type="password"
           labelFor="passwordField"

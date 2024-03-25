@@ -9,6 +9,8 @@ export default {
 
     BLUE_600: "#2689b2",
 
+    GRAY_800: "#898383",
+
     WHITE: "#fff",
     BLACK: "#000",
   },
