@@ -6,9 +6,13 @@ import { Link } from "react-router-dom";
 import { Line } from "../../../components/line";
 
 export function AddressData() {
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+
   return (
     <>
-      <Form title="Endereço">
+      <Form title="Endereço" onSubmit={handleSubmit}>
         <Input
           title="CEP"
           type="number"

@@ -20,6 +20,10 @@ export function SignIn() {
     } else setImage(orangeCat);
   };
 
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+
   useEffect(() => {
     handleResize();
 
@@ -36,7 +40,7 @@ export function SignIn() {
       <div>
         <img src={image} alt="" />
         <div>
-          <Form title="Login">
+          <Form title="Login" onSubmit={handleSubmit}>
             <Input
               title="E-mail"
               placeholder="email@email.com"

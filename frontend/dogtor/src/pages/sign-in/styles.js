@@ -13,12 +13,12 @@ export const Container = styled.main`
     flex-direction: column;
 
     img {
-      max-width: 18.5rem;
+      min-width: 18.5rem;
       margin: 0 auto;
     }
   }
 
-  @media (min-width: 1100px) {
+  @media (min-width: 800px) {
     > div {
       margin: 3.2rem 6.4rem 0;
 
