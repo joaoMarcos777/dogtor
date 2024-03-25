@@ -8,13 +8,21 @@ export const Container = styled.main`
 
   > div {
     margin-top: 3.2rem;
+
+    display: flex;
+    flex-direction: column;
+
+    img {
+      max-width: 18.5rem;
+      margin: 0 auto;
+    }
   }
 
   @media (min-width: 1100px) {
     > div {
       margin: 3.2rem 6.4rem 0;
 
-      display: flex;
+      flex-direction: row;
       gap: 17rem;
 
       img {

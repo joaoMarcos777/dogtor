@@ -100,8 +100,8 @@ export function Landpage() {
         <a href="#">Home</a>
         <a href="#">Serviços</a>
         <a href="#">Sobre nós</a>
-        <button>Login</button>
-        <button>Cadastre-se</button>
+        <LinkButton to="/sign-in">Login</LinkButton>
+        <LinkButton to="/sign-up">Cadastre-se</LinkButton>
       </HeaderMenu>
 
       <Content>
