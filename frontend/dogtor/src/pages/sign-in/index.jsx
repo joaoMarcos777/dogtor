@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import orangeCat from "../../assets/orange-cat.png";
 import pets from "../../assets/pets.svg";
+
+import { Container } from "./styles";
+
+import { Form } from "../../components/form";
 import { Button } from "../../components/button";
 import { ButtonText } from "../../components/button-text";
 import { Header } from "../../components/header";
 import { Input } from "../../components/input";
-import { Container, Image, Form } from "./styles";
 import { Link } from "react-router-dom";
 
 export function SignIn() {
@@ -30,28 +33,30 @@ export function SignIn() {
     <Container>
       <Header />
 
-      <Image src={image} alt="" />
+      <div>
+        <img src={image} alt="" />
+        <div>
+          <Form title="Login">
+            <Input
+              title="E-mail"
+              placeholder="email@email.com"
+              type="email"
+              labelFor="emailField"
+            />
+            <Input
+              title="Senha"
+              placeholder="*******"
+              type="password"
+              labelFor="passwordField"
+            />
 
-      <Form>
-        <h1>Login</h1>
-        <Input
-          title="E-mail"
-          placeholder="email@email.com"
-          type="email"
-          labelFor="emailField"
-        />
-        <Input
-          title="Senha"
-          placeholder="*******"
-          type="password"
-          labelFor="passwordField"
-        />
-
-        <Button title="Entrar" primary />
-        <Link to="/sign-up">
-          <ButtonText title="Cadastre-se" />
-        </Link>
-      </Form>
+            <Button title="Entrar" primary />
+            <Link to="/sign-up">
+              <ButtonText title="Cadastre-se" />
+            </Link>
+          </Form>
+        </div>
+      </div>
     </Container>
   );
 }
