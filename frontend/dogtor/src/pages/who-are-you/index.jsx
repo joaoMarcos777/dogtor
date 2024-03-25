@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import orangeCat from "../../assets/orange-cat.png";
 import pets from "../../assets/pets.svg";
-import { Container, Image } from "./styles";
+import { Container } from "./styles";
 import { Button } from "../../components/button";
 import { Header } from "../../components/header";
 import { Form } from "../../components/form";
@@ -30,18 +30,15 @@ export function WhoAreYou() {
     <Container>
       <Header />
 
-      <ContentWrapper>
-        <Image src={image} alt="" />
-        <div>
-          <Form title="Você é?">
-            <Link to="/sign-in">
-              <Button title="Usuário" primary />
-            </Link>
-            <Link to="/sign-in">
-              <Button title="Veterinário" secondary={true} />
-            </Link>
-          </Form>
-        </div>
+      <ContentWrapper image={image}>
+        <Form title="Você é?">
+          <Link to="/sign-in">
+            <Button title="Usuário" primary />
+          </Link>
+          <Link to="/sign-in">
+            <Button title="Veterinário" secondary={true} />
+          </Link>
+        </Form>
       </ContentWrapper>
     </Container>
   );

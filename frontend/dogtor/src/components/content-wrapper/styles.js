@@ -14,6 +14,7 @@ export const Container = styled.div`
   @media (min-width: 800px) {
     margin: 3.2rem 6.4rem 0;
 
+    align-items: center;
     flex-direction: row;
     gap: 17rem;
 

@@ -6,5 +6,3 @@ export const Container = styled.main`
   justify-content: center;
   padding: 0 1.6rem;
 `;
-
-export const Image = styled.img``;

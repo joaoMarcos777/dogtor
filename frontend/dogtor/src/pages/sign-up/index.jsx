@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import pets from "../../assets/pets.svg";
+import orangeCat from "../../assets/orange-cat.png";
 
 import { Container, Wrapper } from "./styles";
 
@@ -13,7 +14,6 @@ export function SignUp() {
   const [formData, setFormData] = useState({});
 
   const handleNext = (data) => {
-    console.log("sup bitch");
     setFormData({ ...formData, ...data });
   };
 
@@ -26,7 +26,7 @@ export function SignUp() {
   const handleResize = () => {
     if (window.innerWidth > 1100) {
       setImage(pets);
-    } else setImage(null);
+    } else setImage(orangeCat);
   };
 
   useEffect(() => {
@@ -42,15 +42,12 @@ export function SignUp() {
     <Container>
       <Header />
 
-      <ContentWrapper>
-        <img src={image} alt="" />
-        <Wrapper>
-          <Outlet
-            data={formData}
-            onNext={handleNext}
-            onPrevious={handlePrevious}
-          />
-        </Wrapper>
+      <ContentWrapper image={image}>
+        <Outlet
+          data={formData}
+          onNext={handleNext}
+          onPrevious={handlePrevious}
+        />
       </ContentWrapper>
     </Container>
   );

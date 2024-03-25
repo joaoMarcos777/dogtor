@@ -38,29 +38,26 @@ export function SignIn() {
     <Container>
       <Header />
 
-      <ContentWrapper>
-        <img src={image} alt="" />
-        <div>
-          <Form title="Login" onSubmit={handleSubmit}>
-            <Input
-              title="E-mail"
-              placeholder="email@email.com"
-              type="email"
-              labelFor="emailField"
-            />
-            <Input
-              title="Senha"
-              placeholder="*******"
-              type="password"
-              labelFor="passwordField"
-            />
+      <ContentWrapper image={image}>
+        <Form title="Login" onSubmit={handleSubmit}>
+          <Input
+            title="E-mail"
+            placeholder="email@email.com"
+            type="email"
+            labelFor="emailField"
+          />
+          <Input
+            title="Senha"
+            placeholder="*******"
+            type="password"
+            labelFor="passwordField"
+          />
 
-            <Button title="Entrar" primary />
-            <Link to="/sign-up">
-              <ButtonText title="Cadastre-se" />
-            </Link>
-          </Form>
-        </div>
+          <Button title="Entrar" primary />
+          <Link to="/sign-up">
+            <ButtonText title="Cadastre-se" />
+          </Link>
+        </Form>
       </ContentWrapper>
     </Container>
   );
