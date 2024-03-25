@@ -8,10 +8,13 @@ import { Container, Wrapper } from "./styles";
 import { Header } from "../../components/header";
 import { ContentWrapper } from "../../components/content-wrapper";
 
+import { createContext } from "react";
+const isVetContext = createContext(null);
+
 export function SignUp() {
   const [image, setImage] = useState({});
-
   const [formData, setFormData] = useState({});
+  const [isVet, setIsVet] = useState(false);
 
   const handleNext = (data) => {
     setFormData({ ...formData, ...data });
@@ -44,6 +47,10 @@ export function SignUp() {
 
       <ContentWrapper image={image}>
         <Outlet
+          context={{
+            isVet,
+            setIsVet,
+          }}
           data={formData}
           onNext={handleNext}
           onPrevious={handlePrevious}

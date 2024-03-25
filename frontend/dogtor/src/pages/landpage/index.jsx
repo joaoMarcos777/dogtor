@@ -77,7 +77,7 @@ export function Landpage() {
           </li>
         </ul>
         <div className="buttons">
-          <LinkButton to="/who-are-you">Login</LinkButton>
+          <LinkButton to="/sign-in">Login</LinkButton>
           <LinkButton to="/sign-up">Cadastre-se</LinkButton>
         </div>
 
