@@ -8,9 +8,13 @@ import { PiUploadSimple } from "react-icons/pi";
 import { InputUpload } from "../../../components/input-upload";
 
 export function VetData() {
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
+
   return (
     <>
-      <Form title="Dados profissionais">
+      <Form title="Dados profissionais" onSubmit={handleSubmit}>
         <Input
           title="CRMV"
           type="number"
@@ -19,9 +23,7 @@ export function VetData() {
         />
         <InputUpload type="file" labelFor="uploadField" icon={PiUploadSimple} />
 
-        <Link to="/sign-up/documents-data">
-          <Button title="Próximo" />
-        </Link>
+        <Button title="Cadastrar" />
 
         <Line />
 
