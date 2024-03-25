@@ -1,16 +1,14 @@
-import { Container, Form } from "./styles";
+import { Link } from "react-router-dom";
+import { Form } from "../../../components/form";
 import { Input } from "../../../components/input";
 import { Button } from "../../../components/button";
 import { ButtonText } from "../../../components/button-text";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Line } from "../../../components/line";
 
 export function PersonalData() {
   return (
-    <Container>
-      <Form>
-        <h1>Dados Pessoais</h1>
-
+    <>
+      <Form title="Dados pessoais">
         <Input
           title="Nome"
           type="text"
@@ -39,10 +37,13 @@ export function PersonalData() {
         <Link to="/sign-up/documents-data">
           <Button title="Próximo" />
         </Link>
+
+        <Line />
+
+        <Link to="/sign-in">
+          <ButtonText title="Já possuo conta" />
+        </Link>
       </Form>
-      <Link to="/sign-in">
-        <ButtonText title="Já possuo conta" />
-      </Link>
-    </Container>
+    </>
   );
 }

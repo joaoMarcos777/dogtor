@@ -1,18 +1,14 @@
-import { Container, Form } from "./styles";
+import { Form } from "../../../components/form";
 import { Input } from "../../../components/input";
 import { Button } from "../../../components/button";
 import { ButtonText } from "../../../components/button-text";
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Line } from "../../../components/line";
 
 export function AddressData() {
-  const [password, setPassword] = useState("");
-
   return (
-    <Container>
-      <Form>
-        <h1>Endereço</h1>
-
+    <>
+      <Form title="Endereço">
         <Input
           title="CEP"
           type="number"
@@ -54,10 +50,12 @@ export function AddressData() {
           title="Cadastrar"
           onClick={() => onSubmit({ ...data, password })}
         />
+
+        <Line />
+        <Link to="/sign-up/documents-data">
+          <ButtonText title="Voltar" />
+        </Link>
       </Form>
-      <Link to="/sign-up/documents-data">
-        <ButtonText title="Voltar" />
-      </Link>
-    </Container>
+    </>
   );
 }

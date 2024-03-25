@@ -6,8 +6,11 @@ export const Container = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 
   padding: 1.6rem;
+
+  box-shadow: 0 1rem 1rem -1rem #e3e0e0;
 
   > a {
     text-decoration: none;
@@ -20,6 +23,6 @@ export const Container = styled.header`
 
   @media (min-width: 800px) {
     padding: 3.2rem 6.4rem;
-    justify-self: flex-start;
+    justify-content: flex-start;
   }
 `;

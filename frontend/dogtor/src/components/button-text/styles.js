@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const Container = styled.button`
   margin-top: 2rem;
 
+  width: 100%;
+
   background: none;
   border: none;
 

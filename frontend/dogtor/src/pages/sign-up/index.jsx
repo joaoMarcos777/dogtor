@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Outlet, Route, Router, Routes } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import pets from "../../assets/pets.svg";
+import { Container, Wrapper } from "./styles";
 
 import { Header } from "../../components/header";
-import { Container, Image } from "./styles";
-
-import { PersonalData } from "./personal-data";
-import { DocumentsData } from "./documents-data";
-import { AddressData } from "./address-data";
 
 export function SignUp() {
   const [image, setImage] = useState({});
@@ -44,9 +40,16 @@ export function SignUp() {
     <Container>
       <Header />
 
-      <Image src={image} alt="" />
-
-      <Outlet data={formData} onNext={handleNext} onPrevious={handlePrevious} />
+      <div>
+        <img src={image} alt="" />
+        <Wrapper>
+          <Outlet
+            data={formData}
+            onNext={handleNext}
+            onPrevious={handlePrevious}
+          />
+        </Wrapper>
+      </div>
     </Container>
   );
 }

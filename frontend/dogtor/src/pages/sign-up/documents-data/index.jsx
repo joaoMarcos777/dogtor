@@ -1,18 +1,14 @@
-import { Container, Form } from "./styles";
 import { Input } from "../../../components/input";
 import { Button } from "../../../components/button";
 import { ButtonText } from "../../../components/button-text";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Form } from "../../../components/form";
+import { Line } from "../../../components/line";
 
 export function DocumentsData() {
-  const [cpf, setCpf] = useState("");
-
   return (
-    <Container>
-      <Form>
-        <h1>Documentos</h1>
-
+    <>
+      <Form title="Documentos">
         <Input
           title="CPF"
           type="number"
@@ -35,10 +31,13 @@ export function DocumentsData() {
         <Link to="/sign-up/address-data">
           <Button title="Próximo" />
         </Link>
+
+        <Line />
+
+        <Link to="/sign-up/personal-data">
+          <ButtonText title="Voltar" />
+        </Link>
       </Form>
-      <Link to="/sign-up/personal-data">
-        <ButtonText title="Voltar" />
-      </Link>
-    </Container>
+    </>
   );
 }
