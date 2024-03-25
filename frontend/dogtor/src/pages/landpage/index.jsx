@@ -12,6 +12,7 @@ import {
   CareULoveSection,
   HowItWorksSection,
   Footer,
+  LinkButton,
 } from "./styles";
 import { Section } from "../../components/section";
 
@@ -76,8 +77,8 @@ export function Landpage() {
           </li>
         </ul>
         <div className="buttons">
-          <button>Login</button>
-          <button>Cadastre-se</button>
+          <LinkButton to="/sign-in">Login</LinkButton>
+          <LinkButton to="/sign-up">Cadastre-se</LinkButton>
         </div>
 
         <button

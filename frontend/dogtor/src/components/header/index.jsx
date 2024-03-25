@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import { Container } from "./styles";
 
 export function Header() {
   return (
     <Container>
-      <h1>Dogtor</h1>
+      <Link to="/">Dogtor</Link>
     </Container>
   );
 }

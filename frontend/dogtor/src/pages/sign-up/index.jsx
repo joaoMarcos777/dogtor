@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Outlet, Route, Router, Routes } from "react-router-dom";
 import pets from "../../assets/pets.svg";
 
 import { Header } from "../../components/header";
@@ -26,12 +26,14 @@ export function SignUp() {
     alert("Submitted");
   };
 
+  const handleResize = () => {
+    if (window.innerWidth > 1100) {
+      setImage(pets);
+    } else setImage(null);
+  };
+
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 1100) {
-        setImage(pets);
-      } else setImage(null);
-    };
+    handleResize();
 
     window.addEventListener("load", handleResize);
     window.addEventListener("resize", handleResize);
@@ -45,15 +47,16 @@ export function SignUp() {
 
       <Image src={image} alt="" />
 
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/personal-data"
-            element={<PersonalData onNext={handleNext} />}
-          />
+      <Routes>
+        <Route path="/" element={<SignUp />}>
+          <Route path="/" element={<PersonalData onNext={handleNext} />} />
 
           <Route
-            path="/documents-data"
+            path="/sign-up/personal-data"
+            element={<PersonalData onNext={handleNext} />}
+          />
+          <Route
+            path="/sign-up/"
             element={
               <DocumentsData
                 data={formData}
@@ -62,9 +65,8 @@ export function SignUp() {
               />
             }
           />
-
           <Route
-            path="/address-data"
+            path="/sign-up/address-data"
             element={
               <AddressData
                 data={formData}
@@ -73,10 +75,8 @@ export function SignUp() {
               />
             }
           />
-
-          <Route path="/" element={<PersonalData onNext={handleNext} />} />
-        </Routes>
-      </BrowserRouter>
+        </Route>
+      </Routes>
     </Container>
   );
 }

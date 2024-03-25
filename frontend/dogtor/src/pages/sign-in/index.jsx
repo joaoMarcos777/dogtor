@@ -6,16 +6,19 @@ import { ButtonText } from "../../components/button-text";
 import { Header } from "../../components/header";
 import { Input } from "../../components/input";
 import { Container, Image, Form } from "./styles";
+import { Link } from "react-router-dom";
 
 export function SignIn() {
   const [image, setImage] = useState({});
 
+  const handleResize = () => {
+    if (window.innerWidth > 1100) {
+      setImage(pets);
+    } else setImage(orangeCat);
+  };
+
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 1100) {
-        setImage(pets);
-      } else setImage(orangeCat);
-    };
+    handleResize();
 
     window.addEventListener("load", handleResize);
     window.addEventListener("resize", handleResize);
@@ -45,7 +48,9 @@ export function SignIn() {
         />
 
         <Button title="Entrar" primary />
-        <ButtonText title="Cadastre-se" />
+        <Link to="/sign-up">
+          <ButtonText title="Cadastre-se" />
+        </Link>
       </Form>
     </Container>
   );

@@ -32,11 +32,11 @@ export function DocumentsData() {
           labelFor="phoneField"
         />
 
-        <Link to="/address-data">
+        <Link to="/sign-up/address-data">
           <Button title="Próximo" />
         </Link>
       </Form>
-      <Link to="/">
+      <Link to="/sign-up/personal-data">
         <ButtonText title="Voltar" />
       </Link>
     </Container>

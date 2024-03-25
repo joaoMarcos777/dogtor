@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -148,33 +149,36 @@ export const Header = styled.nav`
 
     > .buttons {
       display: flex;
+      align-items: center;
+
       gap: 4rem;
-
-      button {
-        background: transparent;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-      }
-
-      button:first-child:hover {
-        transform: scale(1.1);
-      }
-
-      button:last-child {
-        background: ${({ theme }) => theme.COLORS.ORANGE_600};
-        color: ${({ theme }) => theme.COLORS.WHITE};
-        padding: 1rem 3.6rem;
-        border-radius: 6rem;
-      }
-
-      button:last-child:hover {
-        background: ${({ theme }) => theme.COLORS.ORANGE_HOVER};
-      }
     }
 
     > svg {
       display: none;
     }
+  }
+`;
+
+export const LinkButton = styled(Link)`
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:first-child:hover {
+    transform: scale(1.1);
+  }
+
+  &:last-child {
+    background: ${({ theme }) => theme.COLORS.ORANGE_600};
+    color: ${({ theme }) => theme.COLORS.WHITE};
+    padding: 1rem 3.6rem;
+    border-radius: 6rem;
+  }
+
+  &:last-child:hover {
+    background: ${({ theme }) => theme.COLORS.ORANGE_HOVER};
   }
 `;
 

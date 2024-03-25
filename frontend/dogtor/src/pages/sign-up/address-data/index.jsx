@@ -43,7 +43,7 @@ export function AddressData() {
           onClick={() => onSubmit({ ...data, password })}
         />
       </Form>
-      <Link to="/documents-data">
+      <Link to="/sign-up/documents-data">
         <ButtonText title="Voltar" />
       </Link>
     </Container>

@@ -37,7 +37,7 @@ export function PersonalData({ onNext }) {
           labelFor="confirmPasswordField"
         />
 
-        <Link to="/documents-data">
+        <Link to="/sign-up/documents-data">
           <Button title="Próximo" onClick={() => onNext()} />
         </Link>
       </Form>
