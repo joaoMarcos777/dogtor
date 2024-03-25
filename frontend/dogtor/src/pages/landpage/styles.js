@@ -166,6 +166,8 @@ export const LinkButton = styled(Link)`
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 
+  color: ${({ theme }) => theme.COLORS.BLACK};
+
   &:first-child:hover {
     transform: scale(1.1);
   }
