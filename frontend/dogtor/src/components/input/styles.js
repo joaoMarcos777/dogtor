@@ -35,5 +35,14 @@ export const Container = styled.div`
 
       color: ${({ theme }) => theme.COLORS.BROWN_300};
     }
+
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &[type="number"] {
+      -moz-appearance: textfield;
+    }
   }
 `;
