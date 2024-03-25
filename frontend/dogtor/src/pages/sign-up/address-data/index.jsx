@@ -32,10 +32,22 @@ export function AddressData() {
           labelFor="numberField"
         />
         <Input
+          title="Cidade"
+          type="text"
+          placeholder="Belo Horizonte"
+          labelFor="cityField"
+        />
+        <Input
           title="Complemento"
           type="text"
           placeholder="Casa"
           labelFor="complementField"
+        />
+        <Input
+          title="Bairro"
+          type="text"
+          placeholder="Boa Vista"
+          labelFor="districtField"
         />
 
         <Button

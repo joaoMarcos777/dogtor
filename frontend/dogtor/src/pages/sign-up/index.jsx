@@ -15,12 +15,11 @@ export function SignUp() {
   const [formData, setFormData] = useState({});
 
   const handleNext = (data) => {
+    console.log("sup bitch");
     setFormData({ ...formData, ...data });
   };
 
-  const handlePrevious = () => {
-    // Not implemented in this example
-  };
+  const handlePrevious = () => {};
 
   const handleSubmit = (data) => {
     alert("Submitted");
@@ -47,36 +46,7 @@ export function SignUp() {
 
       <Image src={image} alt="" />
 
-      <Routes>
-        <Route path="/" element={<SignUp />}>
-          <Route path="/" element={<PersonalData onNext={handleNext} />} />
-
-          <Route
-            path="/sign-up/personal-data"
-            element={<PersonalData onNext={handleNext} />}
-          />
-          <Route
-            path="/sign-up/"
-            element={
-              <DocumentsData
-                data={formData}
-                onNext={handleNext}
-                onPrevious={handlePrevious}
-              />
-            }
-          />
-          <Route
-            path="/sign-up/address-data"
-            element={
-              <AddressData
-                data={formData}
-                onPrevious={handlePrevious}
-                onSubmit={handleSubmit}
-              />
-            }
-          />
-        </Route>
-      </Routes>
+      <Outlet data={formData} onNext={handleNext} onPrevious={handlePrevious} />
     </Container>
   );
 }

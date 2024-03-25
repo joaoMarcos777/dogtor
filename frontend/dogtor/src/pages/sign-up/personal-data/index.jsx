@@ -5,8 +5,7 @@ import { ButtonText } from "../../../components/button-text";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export function PersonalData({ onNext }) {
-  const [name, setName] = useState("");
+export function PersonalData() {
   return (
     <Container>
       <Form>
@@ -38,7 +37,7 @@ export function PersonalData({ onNext }) {
         />
 
         <Link to="/sign-up/documents-data">
-          <Button title="Próximo" onClick={() => onNext()} />
+          <Button title="Próximo" />
         </Link>
       </Form>
       <Link to="/sign-in">
